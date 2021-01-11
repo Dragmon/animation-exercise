@@ -1,9 +1,10 @@
 import React from 'react';
+import Service from '../container/Service';
 
 const Home = () => {
   return (
     <>
-      <h1>Home Page</h1>
+      <Service />
     </>
   );
 };
