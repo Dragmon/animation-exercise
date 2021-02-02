@@ -8,6 +8,7 @@ const theme = {
     pink: '#fc185a',
     green: '#05e591',
     purple: '#6805df',
+    yellow: '#fcdc00',
     white: '#FFFFFF',
     black: '#000000',
     backgroundColorGeneral: '#FFFFFF',
