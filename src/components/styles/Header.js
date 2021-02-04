@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
   height: 80px;
-  background-color: #d4d4de;
+  /* background-color: #d4d4de; */
   display: flex;
 `;
 export const ContLogo = styled.div`

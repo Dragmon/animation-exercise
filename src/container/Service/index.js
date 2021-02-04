@@ -9,17 +9,31 @@ const ServiceSection = styled.section`
   text-align: center;
   background-color: ${(props) => props.theme.colors.backgroundColorService};
 `;
-
+const TitleSection = styled.div`
+  margin: 0 0 50px 0;
+  & h2 {
+    color: ${(props) => props.theme.colors.pink};
+    font-family: 'MarckScript';
+    font-size: 3em;
+  }
+  & h3 {
+    font-size: 3.5em;
+    & span {
+      font-family: 'MarckScript';
+      font-weight: 100;
+    }
+  }
+`;
 const ListService = styled.div`
   display: grid;
   grid-gap: 100px;
   grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 10%;
 `;
 const Card = styled.div`
   border-radius: 25px;
-  padding: 70px 50px;
+  padding: 60px 30px;
   transition: all 0.5s ease-in-out;
   &:hover {
     transform: scale(1.15);
@@ -52,14 +66,19 @@ const Icon = styled.div`
 const TextCard = styled.div`
   & h4 {
     margin: 25px 0;
+    font-size: 2.2em;
   }
 `;
 
 const Service = () => {
   return (
     <ServiceSection>
-      <h3>Service</h3>
-      <h2>Million of people use : Vimeo</h2>
+      <TitleSection>
+        <h2>Service</h2>
+        <h3>
+          Million of people use : <span>Vimeo</span>
+        </h3>
+      </TitleSection>
       <ListService>
         <Card>
           <Icon>

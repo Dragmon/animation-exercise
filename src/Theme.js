@@ -11,6 +11,8 @@ const theme = {
     yellow: '#fcdc00',
     white: '#FFFFFF',
     black: '#000000',
+    orange: '#dd6e2b',
+    textColorPrimary: '#19063d',
     backgroundColorGeneral: '#FFFFFF',
     backgroundColorService: '#f3f4f6',
   },
