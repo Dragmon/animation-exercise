@@ -1,6 +1,6 @@
 import React from 'react';
-import Service from '../container/Service';
-import Collections from '../container/Collections';
+import Service from '../components/Service';
+import Collections from '../components/Collections';
 
 const Home = () => {
   return (
