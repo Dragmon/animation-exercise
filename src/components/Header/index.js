@@ -1,11 +1,26 @@
 import React from 'react';
-import { Header, Menu, ContLogo, ButtonStarted } from '../styles/Header';
+import shoppingCart from '../../assets/images/shopping-cart.png';
+import {
+  Header,
+  Menu,
+  ContLogo,
+  ButtonStarted,
+  LogoCart,
+  TitleLogo,
+} from '../styles/Header';
 
 const index = () => {
   return (
     <Header>
-      <ContLogo className='logo'></ContLogo>
-      <Menu className='menu'>
+      <ContLogo>
+        <LogoCart>
+          <img src={shoppingCart} alt='shopping-cart' />
+        </LogoCart>
+        <TitleLogo>
+          <h2>:Vimeo</h2>
+        </TitleLogo>
+      </ContLogo>
+      <Menu>
         <ul>
           <li>
             <a href='#'>Men</a>
@@ -25,7 +40,7 @@ const index = () => {
             <a href='#'>About us</a>
           </li>
           <li>
-            <a href='#'>Contatc</a>
+            <a href='#'>Contact</a>
           </li>
         </ul>
         <ButtonStarted>Get Started</ButtonStarted>

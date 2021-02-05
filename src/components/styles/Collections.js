@@ -1,20 +1,35 @@
-import React from 'react';
 import styled from 'styled-components';
-import shoppingCart from '../../assets/images/shopping-cart.png';
-import shoppingGirl from '../../assets/images/girl-shopping.jpg';
 
-const CollectionSection = styled.section`
+export const CollectionSection = styled.section`
   display: grid;
   grid-template-columns: minmax(350px, 40%) 1fr;
   @media (max-width: ${(props) => props.theme.sizeDevice.lg}) {
     grid-template-columns: 1fr;
+    padding: 0 5%;
   }
 `;
-const CollectionInfo = styled.div`
+export const CollectionInfo = styled.div`
   padding: 15% 0 15% 15%;
+  @media (max-width: ${(props) => props.theme.sizeDevice.xl}) {
+    padding: 10% 0 10% 15%;
+  }
+  @media (max-width: ${(props) => props.theme.sizeDevice.lg}) {
+    padding: 0;
+    margin: 0 0 5%;
+    text-align: center;
+  }
   & h1 {
     font-size: 6.5em;
-    padding: 0 25% 0 0;
+    padding: 0 15% 0 0;
+    @media (max-width: ${(props) => props.theme.sizeDevice.xl}) {
+      font-size: 5.8em;
+    }
+    @media (max-width: ${(props) => props.theme.sizeDevice.lg}) {
+      padding: 0;
+    }
+    @media (max-width: ${(props) => props.theme.sizeDevice.sm}) {
+      font-size: 3em;
+    }
   }
   & h3 {
     font-family: 'MarckScript';
@@ -26,69 +41,97 @@ const CollectionInfo = styled.div`
     margin: 20px 0;
   }
 `;
-const CollectionPromotion = styled.div`
+export const CollectionPromotion = styled.div`
   position: relative;
 `;
-const ImageShopping = styled.div`
+export const ImageShopping = styled.div`
   display: flex;
   justify-content: flex-end;
+  width: auto;
   & img {
-    clip-path: inset(2% 15% round 30% 18% 15% 18%);
+    clip-path: inset(2% 7% 2% 15% round 30% 18% 15% 18%);
+    width: 100%;
   }
   @media (max-width: ${(props) => props.theme.sizeDevice.lg}) {
     display: flex;
     justify-content: center;
   }
 `;
-const Offer = styled.div`
+export const Offer = styled.div`
   position: absolute;
+  z-index: 1;
   top: 50px;
-  left: 23%;
+  left: 15%;
   background-color: ${(props) => props.theme.colors.pink};
   padding: 20px;
   border-radius: 25px 25px 0;
+  @media (max-width: ${(props) => props.theme.sizeDevice.sm}) {
+    top: 10px;
+    left: 7%;
+    padding: 15px;
+  }
   & p {
     color: ${(props) => props.theme.colors.white};
     font-family: 'Mplus2p Bold';
   }
   & p:nth-child(1) {
     font-size: 1.8rem;
+    @media (max-width: ${(props) => props.theme.sizeDevice.sm}) {
+      font-size: 1.5rem;
+    }
   }
   & p:nth-child(2) {
     font-size: 1rem;
   }
 `;
-const Reach = styled.div`
+export const Reach = styled.div`
   position: absolute;
+  z-index: 1;
   top: 50%;
-  left: 15%;
+  left: 8%;
   background-color: ${(props) => props.theme.colors.backgroundColorService};
   padding: 25px;
   border-radius: 20px;
+  @media (max-width: ${(props) => props.theme.sizeDevice.sm}) {
+    top: 45%;
+    left: 0;
+    padding: 15px;
+  }
   & p {
     font-family: 'Mplus2p Bold';
   }
   & p:nth-child(1) {
     font-size: 1.8rem;
+    @media (max-width: ${(props) => props.theme.sizeDevice.sm}) {
+      font-size: 1.5rem;
+    }
   }
   & p:nth-child(2) {
     font-size: 1rem;
   }
 `;
-const ShoppingCart = styled.div`
+export const ShoppingCart = styled.div`
   position: absolute;
+  z-index: 1;
   bottom: 20px;
-  left: 29%;
+  left: 20%;
   border-radius: 25px 5px 25px 25px;
   background-color: ${(props) => props.theme.colors.green};
+  @media (max-width: ${(props) => props.theme.sizeDevice.sm}) {
+    bottom: 5px;
+    left: 80%;
+  }
   & img {
     width: 50px;
     padding: 10px;
+    @media (max-width: ${(props) => props.theme.sizeDevice.sm}) {
+      width: 35px;
+    }
   }
 `;
-const Link = styled.div``;
-const LinkShopping = styled.a`
-  position: absolute;
+export const Link = styled.div``;
+export const LinkShopping = styled.a`
+  width: 145px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -118,8 +161,11 @@ const LinkShopping = styled.a`
       );
     }
   }
+  @media (max-width: ${(props) => props.theme.sizeDevice.lg}) {
+    margin: 0 auto;
+  }
 `;
-const Icon = styled.div`
+export const Icon = styled.div`
   background: linear-gradient(
     90deg,
     rgba(216, 107, 54, 1) 0%,
@@ -132,45 +178,3 @@ const Icon = styled.div`
   text-align: center;
   font-size: 1.1em;
 `;
-
-const index = () => {
-  return (
-    <CollectionSection>
-      <CollectionInfo>
-        <h3>Collections</h3>
-        <h1>Anytime Any Place.</h1>
-        <p>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old.
-        </p>
-        <Link>
-          <LinkShopping href='#'>
-            Start shopping
-            <Icon>
-              <span> {'>'} </span>
-            </Icon>
-          </LinkShopping>
-        </Link>
-      </CollectionInfo>
-      <CollectionPromotion>
-        <ImageShopping>
-          <img src={shoppingGirl} alt='girl-shopping' />
-        </ImageShopping>
-        <Offer>
-          <p>20% OFF</p>
-          <p>Lorem Ipsum is not</p>
-        </Offer>
-        <Reach>
-          <p>256.12K</p>
-          <p>Lorem Ipsum is not simply</p>
-        </Reach>
-        <ShoppingCart>
-          <img src={shoppingCart} alt='shopping-cart' />
-        </ShoppingCart>
-      </CollectionPromotion>
-    </CollectionSection>
-  );
-};
-
-export default index;

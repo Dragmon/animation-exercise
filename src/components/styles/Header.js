@@ -2,17 +2,67 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
   height: 80px;
-  /* background-color: #d4d4de; */
   display: flex;
+  @media (max-width: ${(props) => props.theme.sizeDevice.md}) {
+    height: auto;
+    flex-direction: column;
+  }
 `;
 export const ContLogo = styled.div`
-  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  width: 40%;
+  @media (max-width: ${(props) => props.theme.sizeDevice.lg}) {
+    width: 25%;
+  }
+  @media (max-width: ${(props) => props.theme.sizeDevice.md}) {
+    width: 100%;
+    justify-content: center;
+    margin: 30px 0 0;
+  }
+`;
+export const LogoCart = styled.div`
+  width: 40px;
+  height: 40px;
+  margin: 0 0 0 10%;
+  border-radius: 25px 5px 25px 25px;
+  background-color: ${(props) => props.theme.colors.purple};
+  @media (max-width: ${(props) => props.theme.sizeDevice.md}) {
+    margin: 0px;
+  }
+  & img {
+    width: 30px;
+    padding: 5px;
+  }
+`;
+export const TitleLogo = styled.div`
+  margin: 0 0 0 10px;
+  & h2 {
+    font-family: 'MarckScript';
+  }
 `;
 export const Menu = styled.nav`
-  width: 50%;
+  width: 60%;
   display: inherit;
   justify-content: space-around;
+  @media (max-width: ${(props) => props.theme.sizeDevice.lg}) {
+    width: 75%;
+  }
+  @media (max-width: ${(props) => props.theme.sizeDevice.md}) {
+    width: 100%;
+  }
+  @media (max-width: ${(props) => props.theme.sizeDevice.sm}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   & ul {
+    @media (max-width: ${(props) => props.theme.sizeDevice.sm}) {
+      padding: 0px;
+      margin: 0px;
+    }
     & li {
       display: inline-block;
       padding: 0 10px;
@@ -62,4 +112,7 @@ export const ButtonStarted = styled.button`
   color: ${(props) => props.theme.colors.white};
   box-shadow: 0px 10px 15px 0px rgba(104, 5, 223, 0.6);
   outline: none;
+  @media (max-width: ${(props) => props.theme.sizeDevice.md}) {
+    padding: 10px 20px;
+  }
 `;
